@@ -87,7 +87,18 @@ struct ColorSpecification:Specification<Product>{
 
 };
     
+template<typename T> struct AndSpecification: Specification<T>{
 
+    Specification<T>&first_category;
+    Specification<T>&second_category;
+
+    AndSpecification(Specification<T>&first, Specification <T> &second): 
+                                        first_category(first), 
+                                        second_category(second){}
+    bool is_Satified(T &item) override{
+        return first_category.is_Satified(item) && second_category.is_Satified(item);
+    }
+};
 
 int main(){
 
