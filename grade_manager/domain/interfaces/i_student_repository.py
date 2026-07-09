@@ -9,20 +9,20 @@ class IStudentRepository(ABC):
     BluePrint per DataBase Operations Management
     """
     @abstractmethod
-    def create_student(self, student:Student):
+    def _create_student(self, student:Student):
         pass
         
         
     @abstractmethod
-    def delete_student(self, student_id:int)->str:
+    def _delete_student(self, student_id:int):
         pass
     
     @abstractmethod
-    def find_by_id(self, student_id:int)->Optional[Student]:
+    def _find_by_id(self, student_id:int)->Optional[Student]:
         pass
     
     @abstractmethod
-    def find_all(self)->List[Student]:
+    def _find_all(self)->List[Student]:
         pass
         
 
